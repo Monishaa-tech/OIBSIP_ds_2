@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #1a0000, #000000);
+    color: white;
+}
+
+/* Container */
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 30px;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    color: red;
+    text-shadow: 0 0 20px red;
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 30px red; }
+}
+
+/* Card */
+.card {
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 20px;
+    background: rgba(255, 0, 0, 0.05);
+    box-shadow: 0 0 25px rgba(255,0,0,0.3);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px red;
+}
+
+/* Inputs */
+input, select {
+    padding: 12px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    background: black;
+    color: white;
+    width: 220px;
+    font-size: 14px;
+}
+
+/* Focus */
+input:focus, select:focus {
+    box-shadow: 0 0 10px red;
+}
+
+/* Button */
+button {
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, red, darkred);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px red;
+}
+
+/* Result */
+.price {
+    font-size: 1.8rem;
+    color: #ff4444;
+    text-align: center;
+}
+
+/* Reason */
+.reason {
+    color: #ff9999;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Compare */
+.compare-text {
+    text-align: center;
+    color: #ff6666;
+}
+
+/* Better result */
+.better {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #ff3333;
+}
+
+/* Divider */
+hr {
+    border: 1px solid rgba(255,255,255,0.2);
+}

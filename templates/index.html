@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚗 Car Price Predictor</h1>
+
+<!-- 🔵 SINGLE -->
+<div class="card">
+    <h2>Single Car</h2>
+
+    <form action="/predict" method="post">
+        <input type="number" name="year" placeholder="Model Year" required>
+        <input type="number" name="km" placeholder="KM Driven" required>
+
+        <select name="fuel">
+            <option>Petrol</option>
+            <option>Diesel</option>
+            <option>CNG</option>
+        </select>
+
+        <button>Predict</button>
+    </form>
+
+    <h2 class="price">{{ prediction_text }}</h2>
+
+    {% for r in reasons %}
+        <p class="reason">{{ r }}</p>
+    {% endfor %}
+</div>
+
+<hr>
+
+<!-- 🔴 COMPARE -->
+<div class="card">
+    <h2>Compare Cars</h2>
+
+    <form action="/compare" method="post">
+
+        <h3>Car A</h3>
+        <input name="year_a" placeholder="Year" required>
+        <input name="km_a" placeholder="KM" required>
+        <select name="fuel_a">
+            <option>Petrol</option>
+            <option>Diesel</option>
+            <option>CNG</option>
+        </select>
+
+        <h3>Car B</h3>
+        <input name="year_b" placeholder="Year" required>
+        <input name="km_b" placeholder="KM" required>
+        <select name="fuel_b">
+            <option>Petrol</option>
+            <option>Diesel</option>
+            <option>CNG</option>
+        </select>
+
+        <button>Compare</button>
+    </form>
+
+    <h3>Car A: ₹{{ price_a }}</h3>
+    <h3>Car B: ₹{{ price_b }}</h3>
+    <h2 class="better">{{ better }}</h2>
+
+</div>
+
+</div>
+
+</body>
+</html>
